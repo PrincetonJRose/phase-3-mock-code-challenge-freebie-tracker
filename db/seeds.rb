@@ -18,4 +18,10 @@ puts "Creating freebies..."
 # ***************************************************************
 # Create freebies Here
 
+items = ['Button/Pin', 'Pen', 'Lanyards', 'Stickers', 'Keychain', 'Waterbottle', 'Backpack', 'Headwear']
+
+20.times do
+    Freebie.find_or_create_by(dev: Dev.all.sample, company: Company.all.sample, item_name: items.sample, value: rand(1..20))
+end
+
 puts "Seeding done!"
